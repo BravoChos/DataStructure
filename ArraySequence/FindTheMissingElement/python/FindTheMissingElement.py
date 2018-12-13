@@ -36,32 +36,32 @@ def finder(arr1,arr2):
     # Otherwise return last element
     return arr1[-1]
 
-
 arr1 = [1,2,3,4,5,6,7]
 arr2 = [3,7,2,1,4,6]
 print(finder(arr1,arr2)) #5
 
-
-import collections
+import collections #global name
 
 def finder2(arr1, arr2): 
     
     # Using default dict to avoid key errors
-    d=collections.defaultdict(int) 
-    
+    d=collections.defaultdict(int)       # if no
+    print(d)
     # Add a count for every instance in Array 1
     for num in arr2:
+        print(d)
         d[num]+=1 
     
     # Check if num not in dictionary
     for num in arr1: 
         if d[num]==0: 
+            print('adasdasdas',d)   #if new key value comes in? it seems its not undefined but set to 0
             return num 
         
         # Otherwise, subtract a count
         else: d[num]-=1 
 
-arr1 = [5,5,7,7]
-arr2 = [5,7,7]
+arr1 = [5,5,9,7]
+arr2 = [5,5,7,7]
 
-print(  finder2(arr1,arr2) )#5
+print(  finder2(arr1,arr2) )#9
