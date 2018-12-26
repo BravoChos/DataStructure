@@ -7,6 +7,8 @@ It's very common to be asked to implement a Queue class! The class should be abl
 -Dequeue
 -Return the size of the Queue
 
+FIFO
+
 """
 class Queue(object):
   def __init__(self):
