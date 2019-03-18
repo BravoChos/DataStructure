@@ -12,12 +12,11 @@ The output should be:
 2 3 
 4 5 6
 
-Solution
-It won’t be practical to solve this problem using recursion, 
+It wont be practical to solve this problem using recursion, 
 because recursion is similar to depth first search, 
 but what we need here is breadth first search. 
 So we will use a queue as we did previously in breadth first search. 
-First, we’ll push the root node into the queue. 
+First, we will push the root node into the queue. 
 Then we start a while loop with the condition queue not being empty. 
 Then, at each iteration we pop a node from the beginning of the queue and 
 push its children to the end of the queue. Once we pop a node we print its value and space.
@@ -32,6 +31,8 @@ which will become the current level count after printing a new line.
 We count the number of nodes in the next level by counting the number of children 
 of the nodes in the current level. Understanding the code is easier than its explanation:
 '''
+
+import collections
 
 class Node:
     def __init__(self, val=None):
@@ -61,7 +62,7 @@ def levelOrderPrint(tree):
 
 '''
 The time complexity of this solution is O(N), which is the number of nodes in the tree, 
-so it’s optimal. Because we should visit each node at least once. 
+so it is optimal. Because we should visit each node at least once. 
 The space complexity depends on maximum size of the queue at any point, 
 which is the most number of nodes at one level. 
 The worst case occurs when the tree is a complete binary tree, 
@@ -72,3 +73,14 @@ So the space complexity is also O(N). Which is also optimal while using a queue.
 
 Again, this is a very common tree interview question!
 '''
+
+root = Node(1)
+
+root.left = Node(2)
+root.right = Node(3)
+root.left.left = Node(4)
+root.left.right = Node(5)
+root.right.left = Node(6)
+root.right.right = Node(7)
+
+levelOrderPrint(root)
